@@ -1,0 +1,99 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+h1,
+h2 {
+  color: #333;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#file-list,
+#directory-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+li a {
+  display: block;
+  color: #333;
+  padding: 5px 0;
+}
+
+li a:hover {
+  background-color: #f4f4f4;
+}
+
+#go-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+#go-back:hover {
+  background-color: #e2e6ea;
+}
+
+.directory-item,
+.file-item {
+  display: flex;
+  align-items: center;
+}
+
+.directory-item img,
+.file-item img {
+  margin-right: 10px;
+}
+
+/* Optional: Add icons or images next to file and directory names */
+.directory-icon,
+.file-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 5px;
+  }
+
+  h1,
+  h2 {
+    font-size: 1.5em; /* Adjust heading sizes for smaller screens */
+  }
+
+  li a {
+    padding: 10px 5px; /* Increase padding for easier touch */
+  }
+
+  #go-back {
+    padding: 10px;
+    font-size: 1em;
+  }
+}

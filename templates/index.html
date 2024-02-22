@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <meta property="og:title" content="기출문제" />
+    <meta property="og:description" content="기출문제들 다운로드하는 사이트" />
+  </head>
+  <body>
+    <h1>Files and Folders</h1>
+    {% if current_path %}
+    <a
+      id="go-back"
+      href="{{ url_for('index', subpath='/'.join(current_path.split('/')[:-1])) }}"
+      >← Go Back</a
+    >
+    {% endif %}
+    <h2>Directories</h2>
+    <ul id="directory-list">
+      {% for directory in directories %}
+      <li class="directory-item">
+        <!-- Optional: Add a directory icon next to the name -->
+        <a
+          href="{{ url_for('index', subpath=(current_path + '/' + directory if current_path else directory)) }}"
+          >{{ directory }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+    <h2>Files</h2>
+    <ul id="file-list">
+      {% for file in files %}
+      <li class="file-item">
+        <!-- Optional: Add a file icon next to the name -->
+        <a
+          href="{{ url_for('index', subpath=(current_path + '/' + file if current_path else file)) }}"
+          >{{ file }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
