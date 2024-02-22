@@ -21,8 +21,8 @@ def index(subpath=""):
         if os.path.isdir(full_path):
             # List contents of the directory
             contents = os.listdir(full_path)
-            files = [f for f in contents if os.path.isfile(os.path.join(full_path, f))]
-            directories = [d for d in contents if os.path.isdir(os.path.join(full_path, d))]
+            files = sorted([f for f in contents if os.path.isfile(os.path.join(full_path, f))])
+            directories = sorted([d for d in contents if os.path.isdir(os.path.join(full_path, d))])
             return render_template("index.html", files=files, directories=directories, current_path=subpath)
         else:
             # If it's a file, download it
